@@ -2,6 +2,9 @@
 
 JDBC to manage a MySQL database using MVC pattern.
 
+
+<img align="left" width="500" height="500" src="MVC.png">
+
 ## Folder Structure
 
 The workspace contains two folders by default, where:
