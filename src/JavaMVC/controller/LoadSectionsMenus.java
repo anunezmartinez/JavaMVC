@@ -10,6 +10,7 @@ public class LoadSectionsMenus extends WindowAdapter {
         this.newFrame = newFrame;
     }
     public void windowOpened(WindowEvent e){
+
         obj.startQuery();
         try {
             while(obj.rs.next()){

@@ -13,6 +13,7 @@ public LoadData(){
 public String startQuery(){
 
     Model myProducts = null;
+    
     Connection connectionDB = newConnection.startConnection();
     try {
         Statement sections = connectionDB.createStatement();
@@ -37,7 +38,6 @@ public String startQuery(){
         e.printStackTrace();
     }
     return myProducts.getvType();
-    
 }
 
 ConnectionDB newConnection;

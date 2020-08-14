@@ -56,7 +56,6 @@ public class AppFrame extends JFrame{
         add(queryBttn, BorderLayout.SOUTH);
         
 		addWindowListener(new LoadSectionsMenus(this));
-		
 		queryBttn.addActionListener(new ExecuteQueryController(this));
 
 }
