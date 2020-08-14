@@ -32,6 +32,7 @@ public String startQuery(){
         }
     rs.close();
     rs2.close();
+    connectionDB.close();
     } catch (Exception e) {
         e.printStackTrace();
     }

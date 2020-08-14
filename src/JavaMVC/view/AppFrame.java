@@ -2,6 +2,7 @@ package JavaMVC.view;
 
 import javax.swing.*;
 
+import JavaMVC.controller.ExecuteQueryController;
 import JavaMVC.controller.LoadSectionsMenus;
 
 import java.awt.*;
@@ -28,13 +29,13 @@ public class AppFrame extends JFrame{
 		
 		menuSections.setEditable(false);
 		
-		menuSections.addItem("None");
+		menuSections.addItem("All");
 		
 		country=new JComboBox();
 		
 		country.setEditable(false);
 		
-		country.addItem("None");
+		country.addItem("All");
 		
 		result= new JTextArea(4,50);
 		
@@ -54,7 +55,10 @@ public class AppFrame extends JFrame{
 		
         add(queryBttn, BorderLayout.SOUTH);
         
-        addWindowListener(new LoadSectionsMenus(this));
+		addWindowListener(new LoadSectionsMenus(this));
+		
+		queryBttn.addActionListener(new ExecuteQueryController(this));
+
 }
 		
 
@@ -63,6 +67,6 @@ public class AppFrame extends JFrame{
 	
 	public JComboBox country;
 	
-	private JTextArea result;	
+	public JTextArea result;	
 
 }
