@@ -31,11 +31,11 @@ public class AppFrame extends JFrame{
 		
 		menuSections.addItem("All");
 		
-		country=new JComboBox();
+		menuCountry=new JComboBox();
 		
-		country.setEditable(false);
+		menuCountry.setEditable(false);
 		
-		country.addItem("All");
+		menuCountry.addItem("All");
 		
 		result= new JTextArea(4,50);
 		
@@ -45,7 +45,7 @@ public class AppFrame extends JFrame{
 		
 		options.add(menuSections);
 		
-		options.add(country);	
+		options.add(menuCountry);	
 		
 		add(options, BorderLayout.NORTH);
 		
@@ -64,7 +64,7 @@ public class AppFrame extends JFrame{
 
 	public JComboBox menuSections;
 	
-	public JComboBox country;
+	public JComboBox menuCountry;
 	
 	public JTextArea result;	
 

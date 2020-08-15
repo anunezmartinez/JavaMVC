@@ -28,7 +28,7 @@ public class ExecuteQuery {
                 sendTextQuery.setString(1, section);
                 rs = sendTextQuery.executeQuery();
     
-            }else{  
+            }else{
                 sendTextQuery = connectionDB.prepareStatement(queryFullStatement);
                 rs = sendTextQuery.executeQuery();
             };
@@ -47,10 +47,8 @@ public class ExecuteQuery {
     ConnectionDB newConnection;
     public ResultSet rs;
     private PreparedStatement sendTextQuery;
-    private final String queryCountryStatement = "SELECT product_id, name, unit_price FROM sql_inventory.products WHERE country = ?";
-    private final String querySectionStatement = "SELECT product_id, name, unit_price FROM sql_inventory.products WHERE type = ?";
-    private final String queryFullStatement = "SELECT product_id, name, unit_price FROM sql_inventory.products";
-
-
+    private final String queryCountryStatement = "SELECT name, unit_price FROM sql_inventory.products WHERE country = ?";
+    private final String querySectionStatement = "SELECT name, unit_price FROM sql_inventory.products WHERE type = ?";
+    private final String queryFullStatement = "SELECT name, unit_price FROM sql_inventory.products";
 
 }

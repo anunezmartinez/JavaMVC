@@ -14,10 +14,10 @@ public class LoadSectionsMenus extends WindowAdapter {
         obj.startQuery();
         try {
             while(obj.rs.next()){
-                newFrame.menuSections.addItem(obj.rs.getString(1));    
+                newFrame.menuSections.addItem(obj.rs.getString(1));
             }
             while(obj.rs2.next()){
-                newFrame.country.addItem(obj.rs2.getString(1));
+                newFrame.menuCountry.addItem(obj.rs2.getString(1));
             }
 
         } catch (Exception event) {

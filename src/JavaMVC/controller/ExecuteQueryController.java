@@ -18,10 +18,10 @@ public class ExecuteQueryController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
-
-
+        
         String sectionSelected = (String) newFrame.menuSections.getSelectedItem();
-        String countrySelected = (String) newFrame.country.getSelectedItem();
+        String countrySelected = (String) newFrame.menuCountry.getSelectedItem();
+        
         queryResult = obj.filterDB(sectionSelected, countrySelected);
 
         try {
@@ -30,8 +30,6 @@ public class ExecuteQueryController implements ActionListener {
                 newFrame.result.append(queryResult.getString(1));
                 newFrame.result.append(", ");
                 newFrame.result.append(queryResult.getString(2));
-                newFrame.result.append(", ");
-                newFrame.result.append(queryResult.getString(3));
                 newFrame.result.append("\n");
             }
         } catch (Exception exc) {
