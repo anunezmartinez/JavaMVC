@@ -28,7 +28,13 @@ public class ExecuteQuery {
                 sendTextQuery.setString(1, section);
                 rs = sendTextQuery.executeQuery();
     
-            }else{
+            }else if(!section.equals("All") && !country.equals("All")){
+                sendTextQuery = connectionDB.prepareStatement(querySC);
+                sendTextQuery.setString(1, section);
+                sendTextQuery.setString(2, country);
+                rs = sendTextQuery.executeQuery();
+            }
+            else{
                 sendTextQuery = connectionDB.prepareStatement(queryFullStatement);
                 rs = sendTextQuery.executeQuery();
             };
@@ -49,6 +55,7 @@ public class ExecuteQuery {
     private PreparedStatement sendTextQuery;
     private final String queryCountryStatement = "SELECT name, unit_price FROM sql_inventory.products WHERE country = ?";
     private final String querySectionStatement = "SELECT name, unit_price FROM sql_inventory.products WHERE type = ?";
+    private final String querySC = "SELECT name, unit_price FROM sql_inventory.products WHERE type = ? AND country = ?";
     private final String queryFullStatement = "SELECT name, unit_price FROM sql_inventory.products";
 
 }

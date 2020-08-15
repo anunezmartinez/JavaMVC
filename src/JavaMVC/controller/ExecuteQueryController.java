@@ -23,9 +23,9 @@ public class ExecuteQueryController implements ActionListener {
         String countrySelected = (String) newFrame.menuCountry.getSelectedItem();
         
         queryResult = obj.filterDB(sectionSelected, countrySelected);
-
+        newFrame.result.setText("");
         try {
-            newFrame.result.setText("");
+            
             while(queryResult.next()){
                 newFrame.result.append(queryResult.getString(1));
                 newFrame.result.append(", ");
